@@ -1,0 +1,18 @@
+export default {
+  THEME_COLOR: '#f0f5f7',
+  SUBTHEME_COLOR: '#0077C0',
+  PURPLE_COLOR: '#8B58DF',
+  DARKBLUE_COLOR: '#484CB1',
+  WHITE_COLOR: '#ffffff',
+  BLACK2_COLOR: '#545454',
+  GRAY2_COLOR: '#f0f5f7',
+  BLACK_COLOR: '#212121',
+  //EXTRA
+  BROWN_COLOR: '#362419',
+  GREEN_COLOR: '#03ac13',
+  GRAY_COLOR: '#bebebe',
+  TOSCA_COLOR: '#36a5b2',
+  RED_COLOR: '#ff0000',
+  BLUE_COLOR: '#1269c7',
+  DUST_COLOR: '#e9eaee',
+};
