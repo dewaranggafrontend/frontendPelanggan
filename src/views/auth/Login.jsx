@@ -122,14 +122,14 @@ function Login() {
   return (
     <>
       <Grid container spacing={2}>
-        <Grid item xs={4} sx={{ bgcolor: Color.RED_COLOR }}>
+        <Grid item xs={4}>
           <CardMedia
             component="img"
-            height="892"
-            image="/assets/images/sample_bg.jpeg"
+            // height="892"
+            image="/assets/images/banner-log.png"
             // alt="green iguana"
           />
-          <Typography
+          {/* <Typography
             sx={{ position: 'absolute', color: Color.WHITE_COLOR, top: 5 }}
           >
             Hello
@@ -145,10 +145,102 @@ function Login() {
               top: 20,
               width: 100,
             }}
-          />
+          /> */}
         </Grid>
-        <Grid item xs={8} sx={{ bgcolor: Color.GREEN_COLOR }}>
-          <Typography>Hello2</Typography>
+        <Grid item xs={8} sx={{ bgcolor: Color.THEME_COLOR}}>
+          {opsi === '1' ? (<Box sx={{p: 20}}>
+          <Typography sx={{fontWeight: 'bold', fontSize: 25}}>Login Member</Typography>
+         
+                  <form onSubmit={handleSubmit}>
+                  <Typography sx={{ fontSize: 15, fontWeight: 'bold', mt: 5 }}>
+                    Username
+                  </Typography>
+                    <FormControl
+                      fullWidth
+                      required
+                      margin='normal'
+                      // sx={{
+                      //   '& .MuiTextField-root': { m: 1 },
+                      // }}
+                    >
+                      <TextField
+                        label="email"
+                        type="email"
+                        autoComplete="email"
+                        //   name="email"
+                        onChange={handleChange('email')}
+                      />
+                      <Typography
+                        sx={{ fontSize: 15, fontWeight: 'bold', mt: 2 }}
+                      >
+                        Password
+                      </Typography>
+                      <FormControl variant="outlined" margin='normal'>
+                        <InputLabel htmlFor="outlined-adornment-password">
+                          password
+                        </InputLabel>
+                        <OutlinedInput
+                          id="outlined-adornment-password"
+                          type={data.showPassword ? 'text' : 'password'}
+                          value={data.password}
+                          // name="password"
+                          onChange={handleChange('password')}
+                          endAdornment={
+                            <InputAdornment position="end">
+                              <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge="end"
+                              >
+                                {data.showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          }
+                          label="password"
+                        />
+                      </FormControl>
+                    </FormControl>
+                    <Box
+                      sx={{
+                        fontSize: 13,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        m: 1,
+                      }}
+                    >
+                      <Button
+                      variant="contained"
+                      disableElevation
+                      fullWidth
+                      sx={{
+                        bgcolor: Color.SUBTHEME_COLOR,
+                        textTransform: 'capitalize',
+                        fontWeight: 'bold',
+                        fontSize: 15,
+                        '&:hover': {
+                          bgcolor: Color.SUBTHEME_COLOR,
+                        },
+                      }}
+                      type="submit"
+                    >
+                      Login
+                    </Button>
+                      <Box>
+                        <Link href="#" onClick={() => setOpsi('2')}>
+                          Forgot Password
+                        </Link>
+                      </Box>
+                    </Box>
+                    
+                  </form>
+          </Box>) : null}
+          
         </Grid>
       </Grid>
     </>
