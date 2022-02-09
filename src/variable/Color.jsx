@@ -15,4 +15,10 @@ export default {
   RED_COLOR: '#ff0000',
   BLUE_COLOR: '#1269c7',
   DUST_COLOR: '#e9eaee',
+  ICON_COLOR: '#FF7979',
+  ICON2_COLOR: '#79A7FF',
+  ICON3_COLOR: '#79FFBF',
+  ICON4_COLOR: '#FF79D1',
+  GOLD_COLOR: '#F3C151',
+  DIS_COLOR: '#F2FAFF',
 };

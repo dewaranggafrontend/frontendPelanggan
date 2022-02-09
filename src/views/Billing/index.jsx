@@ -63,7 +63,7 @@ const Item = styled(Paper)(({ theme }) => ({
   // alignItems: 'center',
 }));
 
-function Dashboard() {
+function Billing() {
   const [menu, setMenu] = useRecoilState(menuAtom);
   const [select, setSelect] = useRecoilState(selectAtom);
   const theme = useTheme();
@@ -76,142 +76,9 @@ function Dashboard() {
   };
 
   return (
-    <Box sx={{ pt: 3, pl: 5, pr: 130 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <Item elevation={3}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Typography>Total User Admin</Typography>
-              <Typography sx={{ color: Color.GRAY_COLOR, fontSize: 13 }}>
-                12-12-2021
-              </Typography>
-            </Box>
-            <Divider />
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                mt: 1,
-              }}
-            >
-              <i
-                class="ri-admin-fill"
-                style={{ color: Color.ICON_COLOR, fontSize: 50 }}
-              ></i>
-              <Typography sx={{ fontWeight: 'bold', fontSize: 20 }}>
-                10 User
-              </Typography>
-            </Box>
-          </Item>
-        </Grid>
-        <Grid item xs={6}>
-          <Item elevation={3}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Typography>New Customer</Typography>
-              <Typography sx={{ color: Color.GRAY_COLOR, fontSize: 13 }}>
-                12-12-2021
-              </Typography>
-            </Box>
-            <Divider />
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                mt: 1,
-              }}
-            >
-              <i
-                class="ri-user-add-fill"
-                style={{ color: Color.ICON2_COLOR, fontSize: 50 }}
-              ></i>
-              <Typography sx={{ fontWeight: 'bold', fontSize: 20 }}>
-                5 Customer
-              </Typography>
-            </Box>
-          </Item>
-        </Grid>
-        <Grid item xs={6}>
-          <Item elevation={3}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Typography>Total Customer</Typography>
-              <Typography sx={{ color: Color.GRAY_COLOR, fontSize: 13 }}>
-                12-12-2021
-              </Typography>
-            </Box>
-            <Divider />
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                mt: 1,
-              }}
-            >
-              <i
-                class="ri-group-fill"
-                style={{ color: Color.ICON3_COLOR, fontSize: 50 }}
-              ></i>
-              <Typography sx={{ fontWeight: 'bold', fontSize: 20 }}>
-                55 Customer
-              </Typography>
-            </Box>
-          </Item>
-        </Grid>
-        <Grid item xs={6}>
-          <Item elevation={3}>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}
-            >
-              <Typography>Total Package</Typography>
-              <Typography sx={{ color: Color.GRAY_COLOR, fontSize: 13 }}>
-                12-12-2021
-              </Typography>
-            </Box>
-            <Divider />
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                mt: 1,
-              }}
-            >
-              <i
-                class="ri-archive-fill"
-                style={{ color: Color.ICON4_COLOR, fontSize: 50 }}
-              ></i>
-              <Typography sx={{ fontWeight: 'bold', fontSize: 20 }}>
-                5 Package
-              </Typography>
-            </Box>
-          </Item>
-        </Grid>
-      </Grid>
-      {/* <Grid container spacing={5}>
+    <Box sx={{ flexGrow: 1, px: 3, mt: 5 }}>
+      <Typography sx={{ fontSize: 40 }}>BILLING</Typography>
+      <Grid container spacing={5}>
         <Grid item xs={3}>
           <Item elevation={3}>
             <Box
@@ -412,9 +279,9 @@ function Dashboard() {
             </Box>
           </Item>
         </Grid>
-      </Grid> */}
+      </Grid>
     </Box>
   );
 }
 
-export default Dashboard;
+export default Billing;

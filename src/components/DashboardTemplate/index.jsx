@@ -67,7 +67,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     flexGrow: 1,
     // padding: theme.spacing(3),
-    paddingTop: theme.spacing(3),
+    // paddingTop: theme.spacing(3),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -273,7 +273,11 @@ function DashboardTemplate(props) {
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
-                    bgcolor: Color.WHITE_COLOR,
+                    // bgcolor: Color.WHITE_COLOR,
+                    bgcolor: Color.SUBTHEME_COLOR,
+                    '&:hover': {
+                      backgroundColor: Color.SUBTHEME_COLOR,
+                    },
                   }
                 : {
                     mt: 2,
@@ -295,7 +299,7 @@ function DashboardTemplate(props) {
                 class="ri-dashboard-3-fill"
                 style={
                   nomormenu === '0'
-                    ? { fontSize: 15, color: Color.SUBTHEME_COLOR }
+                    ? { fontSize: 15, color: Color.WHITE_COLOR }
                     : { fontSize: 15, color: Color.GRAY_COLOR }
                 }
               ></i>
@@ -307,7 +311,7 @@ function DashboardTemplate(props) {
                       fontFamily: 'Ubuntu',
                       ml: 2,
                       fontWeight: 'bold',
-                      color: Color.SUBTHEME_COLOR,
+                      color: Color.WHITE_COLOR,
                     }
                   : {
                       fontFamily: 'Ubuntu',
@@ -320,7 +324,186 @@ function DashboardTemplate(props) {
             </Typography>
           </ListItemButton>
 
-          {nomormenu === '0' ? (
+          <ListItemButton
+            component={Link}
+            to="/all-service"
+            sx={
+              nomormenu === '1'
+                ? {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    bgcolor: Color.SUBTHEME_COLOR,
+                    '&:hover': {
+                      backgroundColor: Color.SUBTHEME_COLOR,
+                    },
+                  }
+                : {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }
+            }
+            onClick={() => handleClick('1')}
+          >
+            <IconButton
+              sx={{
+                // width: 24,
+                // height: 24,
+                ml: 3,
+              }}
+            >
+              <i
+                class="ri-inbox-fill"
+                style={
+                  nomormenu === '1'
+                    ? { fontSize: 15, color: Color.WHITE_COLOR }
+                    : { fontSize: 15, color: Color.GRAY_COLOR }
+                }
+              ></i>
+            </IconButton>
+            <Typography
+              sx={
+                nomormenu === '1'
+                  ? {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                      color: Color.WHITE_COLOR,
+                    }
+                  : {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                    }
+              }
+            >
+              All Services
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton
+            component={Link}
+            to="/order"
+            sx={
+              nomormenu === '2'
+                ? {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    bgcolor: Color.SUBTHEME_COLOR,
+                    '&:hover': {
+                      backgroundColor: Color.SUBTHEME_COLOR,
+                    },
+                  }
+                : {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }
+            }
+            onClick={() => handleClick('2')}
+          >
+            <IconButton
+              sx={{
+                // width: 24,
+                // height: 24,
+                ml: 3,
+              }}
+            >
+              <i
+                class="ri-shopping-cart-2-fill"
+                style={
+                  nomormenu === '2'
+                    ? { fontSize: 15, color: Color.WHITE_COLOR }
+                    : { fontSize: 15, color: Color.GRAY_COLOR }
+                }
+              ></i>
+            </IconButton>
+            <Typography
+              sx={
+                nomormenu === '2'
+                  ? {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                      color: Color.WHITE_COLOR,
+                    }
+                  : {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                    }
+              }
+            >
+              Order
+            </Typography>
+          </ListItemButton>
+
+          <ListItemButton
+            component={Link}
+            to="/billing"
+            sx={
+              nomormenu === '3'
+                ? {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    bgcolor: Color.SUBTHEME_COLOR,
+                    '&:hover': {
+                      backgroundColor: Color.SUBTHEME_COLOR,
+                    },
+                  }
+                : {
+                    mt: 2,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }
+            }
+            onClick={() => handleClick('3')}
+          >
+            <IconButton
+              sx={{
+                // width: 24,
+                // height: 24,
+                ml: 3,
+              }}
+            >
+              <i
+                class="ri-inbox-fill"
+                style={
+                  nomormenu === '3'
+                    ? { fontSize: 15, color: Color.WHITE_COLOR }
+                    : { fontSize: 15, color: Color.GRAY_COLOR }
+                }
+              ></i>
+            </IconButton>
+            <Typography
+              sx={
+                nomormenu === '3'
+                  ? {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                      color: Color.WHITE_COLOR,
+                    }
+                  : {
+                      fontFamily: 'Ubuntu',
+                      ml: 2,
+                      fontWeight: 'bold',
+                    }
+              }
+            >
+              Billing
+            </Typography>
+          </ListItemButton>
+          {/* {nomormenu === '0' ? (
             <>
               <ListItemButton
                 component={Link}
@@ -742,7 +925,7 @@ function DashboardTemplate(props) {
                 </Typography>
               </ListItemButton>
             </>
-          )}
+          )} */}
 
           {/* <List>
             {appMenuItems.map((item, index) => (
@@ -901,13 +1084,15 @@ function DashboardTemplate(props) {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
+            boxShadow: 2,
+            py: 3,
           }}
         >
           <Typography
             variant="h4"
             color="initial"
             sx={{
-              mb: 3,
+              // my: 3,
               paddingLeft: 3,
               // width: 350,
               fontFamily: 'Ubuntu',

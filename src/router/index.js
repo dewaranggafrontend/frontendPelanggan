@@ -28,17 +28,21 @@ import Coupon from '../views/Coupon';
 import ProfileCustomer from '../views/ProfileCustomer';
 import AddProfileCustomer from '../views/ProfileCustomer/AddProfileCustomer';
 import Order from '../views/Order';
+import OrderOld from '../views/OrderOld';
 import LogUserRole from '../views/UserRole/LogUserRole';
 import LogJobPosition from '../views/JobPosition/LogJobPosition';
 import LogAdministration from '../views/Administration/LogAdministration';
 import LogPackage from '../views/Package/LogPackage';
 import LogCoupon from '../views/Coupon/LogCoupon';
 import LogProfileCustomer from '../views/ProfileCustomer/LogProfileCustomer';
-import LogOrder from '../views/Order/LogOrder';
+import LogOrder from '../views/OrderOld/LogOrder';
 import Finance from '../views/Finance';
 import DetailCustomer from '../views/ProfileCustomer/DetailCustomer';
-import DetailOrder from '../views/Order/DetailOrder';
+import DetailOrder from '../views/OrderOld/DetailOrder';
 import Setting from '../views/Setting';
+import AllService from '../views/AllService';
+import Billing from '../views/Billing';
+import UpgradeForm from '../views/AllService/UpgradeForm';
 
 function Router() {
   return (
@@ -57,6 +61,38 @@ function Router() {
           element={
             <Middleware.Authenticated>
               <DashboardTemplate render={<Dashboard />} title="Dashboard" />
+            </Middleware.Authenticated>
+          }
+        />
+        <Route
+          path="/all-service"
+          element={
+            <Middleware.Authenticated>
+              <DashboardTemplate render={<AllService />} title="All Service" />
+            </Middleware.Authenticated>
+          }
+        />
+        <Route
+          path="/all-service/upgrade"
+          element={
+            <Middleware.Authenticated>
+              <DashboardTemplate render={<UpgradeForm />} title="Upgrade" />
+            </Middleware.Authenticated>
+          }
+        />
+        <Route
+          path="/order"
+          element={
+            <Middleware.Authenticated>
+              <DashboardTemplate render={<Order />} title="Order" />
+            </Middleware.Authenticated>
+          }
+        />
+        <Route
+          path="/billing"
+          element={
+            <Middleware.Authenticated>
+              <DashboardTemplate render={<Billing />} title="Billing" />
             </Middleware.Authenticated>
           }
         />
@@ -288,7 +324,7 @@ function Router() {
           path="/customer/order"
           element={
             <Middleware.Authenticated>
-              <DashboardTemplate render={<Order />} title="Order" />
+              <DashboardTemplate render={<OrderOld />} title="Order" />
             </Middleware.Authenticated>
           }
         />
