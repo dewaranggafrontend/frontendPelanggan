@@ -18,6 +18,7 @@ import {
   InputAdornment,
   IconButton,
   CardMedia,
+  Paper,
 } from '@mui/material';
 import axios from 'axios';
 import React, { Fragment, useEffect, useState } from 'react';
@@ -172,6 +173,11 @@ function UpgradeForm(props) {
   const handlePage3 = async (e) => {
     e.preventDefault();
     setStep('3');
+  };
+  const handlePage4 = async (e) => {
+    e.preventDefault();
+    console.log('done');
+    navigate('/all-service');
   };
   console.log(data);
   return (
@@ -691,194 +697,358 @@ function UpgradeForm(props) {
               <RadioGroup
                 row
                 required
-                aria-label="gender"
-                name="gender"
-                value={data.gender !== undefined ? data.gender : ''}
+                aria-label="payment"
+                name="payment"
+                value={data.payment !== undefined ? data.payment : ''}
                 onChange={onChange}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
               >
-                <Grid
-                  container
-                  spacing={2}
-                  sx={{ bgcolor: Color.GREEN_COLOR, mt: 2 }}
-                  maxWidth={500}
-                >
+                <Box>
                   <Typography
                     sx={{
                       fontFamily: 'Ubuntu',
-                      mt: 3,
+                      mt: 5,
                       color: Color.GRAY_COLOR,
                     }}
                   >
                     E-Money
                   </Typography>
-                  <Grid item xs={4}>
-                    <FormControlLabel
-                      //   disabled
-                      value="gopay"
-                      control={<Radio />}
-                      label={
-                        <CardMedia
-                          component="img"
-                          image="/assets/images/minilogo/gopay.png"
-                        />
-                      }
-                    />
-                  </Grid>
-                  <Grid item xs={4}>
-                    <FormControlLabel
-                      //   disabled
-                      value="qris"
-                      control={<Radio />}
-                      label={
-                        <CardMedia
-                          component="img"
-                          image="/assets/images/minilogo/qris.png"
-                        />
-                      }
-                    />
-                  </Grid>
-                  <Grid item xs={4}>
-                    <FormControlLabel
-                      //   disabled
-                      value="shopeepay"
-                      control={<Radio />}
-                      label={
-                        <CardMedia
-                          component="img"
-                          image="/assets/images/minilogo/spay.png"
-                        />
-                      }
-                    />
-                  </Grid>
-                </Grid>
-                {/* <FormControlLabel
-                  //   disabled
-                  value="male"
-                  control={<Radio />}
-                  label={
-                    <CardMedia
-                      component="img"
-                      image="/assets/images/minilogo/akulaku.png"
-                    />
-                  }
-                />
-                <FormControlLabel
-                  //   disabled
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
-                /> */}
+                  <FormControlLabel
+                    //   disabled
+                    value="gopay"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/gopay.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="qris"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/qris.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="shopeepay"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/spay.png"
+                      />
+                    }
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Ubuntu',
+                      mt: 5,
+                      color: Color.GRAY_COLOR,
+                    }}
+                  >
+                    Card
+                  </Typography>
+                  <FormControlLabel
+                    //   disabled
+                    value="visa"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/visa.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="mastercard"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/mastercard.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="jcb"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/jcb.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="americaexpress"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/amex.png"
+                      />
+                    }
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Ubuntu',
+                      mt: 5,
+                      color: Color.GRAY_COLOR,
+                    }}
+                  >
+                    Bank Transfer
+                  </Typography>
+                  <FormControlLabel
+                    //   disabled
+                    value="bca"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/bca.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="bni"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/bni.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="briva"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/briva.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="mandiri"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/mandiri.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="permata"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/perma.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="atmbersama"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/atmb.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="alto"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/alto.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="prima"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/prima.png"
+                      />
+                    }
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Ubuntu',
+                      mt: 5,
+                      color: Color.GRAY_COLOR,
+                    }}
+                  >
+                    Over the Counter
+                  </Typography>
+                  <FormControlLabel
+                    //   disabled
+                    value="indomart"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/indmar.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="isaku"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/isaku.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="alfamidi"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/alfmid.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="alfamart"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/alfmar.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="dandan"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/dan.png"
+                      />
+                    }
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Ubuntu',
+                      mt: 5,
+                      color: Color.GRAY_COLOR,
+                    }}
+                  >
+                    Direct Debit
+                  </Typography>
+                  <FormControlLabel
+                    //   disabled
+                    value="bcaklikpay"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/bcakl.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="octo"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/octo.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="brimo"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/brimo.png"
+                      />
+                    }
+                  />
+                  <FormControlLabel
+                    //   disabled
+                    value="danamon"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/danamon.png"
+                      />
+                    }
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Ubuntu',
+                      mt: 5,
+                      color: Color.GRAY_COLOR,
+                    }}
+                  >
+                    Cardless Debit
+                  </Typography>
+                  <FormControlLabel
+                    //   disabled
+                    value="akulaku"
+                    control={<Radio />}
+                    label={
+                      <CardMedia
+                        component="img"
+                        image="/assets/images/minilogo/akulaku.png"
+                      />
+                    }
+                  />
+                </Box>
               </RadioGroup>
-
-              <Grid container spacing={2} sx={{ mt: 1.5 }}>
-                <Grid item md={12}>
-                  <Typography
-                    sx={{
-                      // color: Color.BLUE_COLOR,
-                      fontFamily: 'Ubuntu',
-                      fontSize: 15,
-                      fontWeight: 'bold',
-                      display: 'flex',
-                      // mt: 3,
-                    }}
-                  >
-                    Basic Salary
-                    <Typography sx={{ color: Color.RED_COLOR }}>*</Typography>
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    autoFocus
-                    required
-                    size="small"
-                    error={errorData.basic_salary !== undefined ? true : false}
-                    helperText={
-                      errorData.basic_salary !== undefined
-                        ? errorData.basic_salary[0]
-                        : null
-                    }
-                    margin="normal"
-                    id="basic_salary"
-                    // label="Basic Salary"
-                    type="number"
-                    min="0"
-                    name="basic_salary"
-                    onChange={onChange}
-                    value={
-                      data.basic_salary !== undefined ? data.basic_salary : ''
-                    }
-                  />
-                </Grid>
-              </Grid>
-              <Grid container spacing={2} sx={{ mt: 1.5 }}>
-                <Grid item md={6}>
-                  <Typography
-                    sx={{
-                      // color: Color.BLUE_COLOR,
-                      fontFamily: 'Ubuntu',
-                      fontSize: 15,
-                      fontWeight: 'bold',
-                      // mt: 3,
-                    }}
-                  >
-                    Allowance 1
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    autoFocus
-                    size="small"
-                    error={errorData.allowance_1 !== undefined ? true : false}
-                    helperText={
-                      errorData.allowance_1 !== undefined
-                        ? errorData.allowance_1[0]
-                        : null
-                    }
-                    margin="normal"
-                    id="allowance_1"
-                    // label="Allowance 1"
-                    type="number"
-                    min="0"
-                    name="allowance_1"
-                    onChange={onChange}
-                    value={
-                      data.allowance_1 !== undefined ? data.allowance_1 : ''
-                    }
-                  />
-                </Grid>
-                <Grid item md={6}>
-                  <Typography
-                    sx={{
-                      // color: Color.BLUE_COLOR,
-                      fontFamily: 'Ubuntu',
-                      fontSize: 15,
-                      fontWeight: 'bold',
-                      // mt: 3,
-                    }}
-                  >
-                    Allowance 2
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    autoFocus
-                    size="small"
-                    error={errorData.allowance_2 !== undefined ? true : false}
-                    helperText={
-                      errorData.allowance_2 !== undefined
-                        ? errorData.allowance_2[0]
-                        : null
-                    }
-                    margin="normal"
-                    id="allowance_2"
-                    // label="Allowance 2"
-                    type="number"
-                    min="0"
-                    name="allowance_2"
-                    onChange={onChange}
-                    value={
-                      data.allowance_2 !== undefined ? data.allowance_2 : ''
-                    }
-                  />
-                </Grid>
-              </Grid>
+              <Divider sx={{ mt: 4 }} />
               <Grid
                 container
                 spacing={2}
@@ -911,9 +1081,7 @@ function UpgradeForm(props) {
                   xs={2}
                   sx={{ justifyContent: 'flex-end', display: 'flex' }}
                 >
-                  {data.basic_salary &&
-                  data.allowance_1 &&
-                  data.allowance_2 != null ? (
+                  {data.payment != null ? (
                     <Button
                       // disabled
                       variant="contained"
@@ -947,172 +1115,305 @@ function UpgradeForm(props) {
             </Box>
           </form>
         ) : (
-          <form onSubmit={handleSubmit}>
-            <Box sx={{ px: 30, pt: 5 }}>
-              {step === 'done' ? (
+          <form onSubmit={handlePage4}>
+            <Box sx={{ px: 45, pt: 5 }}>
+              <Typography
+                sx={{
+                  fontWeight: 'bold',
+                  fontFamily: 'Ubuntu',
+                  fontSize: 20,
+                  mb: 3,
+                }}
+              >
+                Transaction
+              </Typography>
+              <Paper sx={{ py: 3, px: 6 }}>
                 <Box
                   sx={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    mt: 10,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>
+                    Order ID: INV0987
+                  </Typography>
+                  <Box
+                    sx={{
+                      bgcolor: Color.GOLD_COLOR,
+                      borderRadius: 5,
+                      color: Color.WHITE_COLOR,
+                      fontSize: 13,
+                      fontWeight: 'bold',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      px: 2,
+                    }}
+                  >
+                    Upgrade
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Customer Name
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu', fontWeight: 'bold' }}>
+                    Mila Jesica
+                  </Typography>
+                </Box>
+                <Typography
+                  sx={{
+                    my: 2,
+                    fontWeight: 'bold',
+                    fontFamily: 'Ubuntu',
+                    fontSize: 20,
+                  }}
+                >
+                  Package 2
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    User Max
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>
+                    100 Employee
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Package Duration
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>
+                    12 Month
+                  </Typography>
+                </Box>
+                <Divider sx={{ my: 2, borderStyle: 'dashed' }} />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Price
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>
+                    IDR 200.000
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
                   }}
                 >
                   <Typography
                     sx={{
-                      fontWeight: 'bold',
                       fontFamily: 'Ubuntu',
-                      fontSize: 20,
+                      color: Color.GRAY_COLOR,
+                      display: 'flex',
                     }}
                   >
-                    Your data has been saved successfully
+                    Coupon
+                    <Typography sx={{ fontStyle: 'italic' }}>
+                      (COUPON1)
+                    </Typography>
                   </Typography>
-                  <Box
-                    sx={{
-                      height: 131,
-                      width: 131,
-                      borderRadius: 131 / 2,
-                      border: 2,
-                      borderColor: Color.GREEN_COLOR,
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      mt: 10,
-                    }}
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.ICON_COLOR }}
                   >
-                    <CheckIcon
-                      sx={{ color: Color.GREEN_COLOR, fontSize: 80 }}
-                    />
-                  </Box>
+                    IDR -50.000
+                  </Typography>
                 </Box>
-              ) : (
-                <>
-                  <Box
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    PPn
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>10%</Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Unique Code
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}>234</Typography>
+                </Box>
+                <Divider sx={{ my: 2, borderStyle: 'dashed' }} />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <Typography sx={{ fontFamily: 'Ubuntu', fontWeight: 'bold' }}>
+                    Total
+                  </Typography>
+                  <Typography
                     sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
+                      fontFamily: 'Ubuntu',
+                      color: Color.GREEN_COLOR,
+                      fontSize: 20,
+                      fontWeight: 'bold',
                     }}
                   >
-                    <Typography
-                      sx={{
-                        fontWeight: 'bold',
-                        fontFamily: 'Ubuntu',
-                        fontSize: 20,
-                      }}
-                    >
-                      Submit Employee Data
-                    </Typography>
-                    <Typography
-                      sx={{ fontFamily: 'Ubuntu', fontSize: 12, mt: 2 }}
-                    >
-                      You have successfully added employee data. To continue the
-                      process, you
-                    </Typography>
-                    <Typography sx={{ fontFamily: 'Ubuntu', fontSize: 12 }}>
-                      can submit the employees data to access
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      py: 3,
-                      px: 10,
-                      bgcolor: Color.LIGHTGRAY2_COLOR,
-                      mt: 2,
-                      borderRadius: 2,
-                    }}
+                    IDR 200.000
+                  </Typography>
+                </Box>
+              </Paper>
+              <Box
+                sx={{
+                  py: 3,
+                  px: 6,
+                  bgcolor: Color.DUST_COLOR,
+                  mt: 3,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography
+                  sx={{
+                    my: 2,
+                    fontWeight: 'bold',
+                    fontFamily: 'Ubuntu',
+                    // fontSize: 20,
+                  }}
+                >
+                  Payment Information
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
                   >
-                    <Typography
-                      sx={{
-                        fontFamily: 'Ubuntu',
-                        fontSize: 15,
-                        fontWeight: 'bold',
-                        display: 'flex',
-                      }}
-                    >
-                      User Role
-                      <Typography sx={{ color: Color.RED_COLOR }}>*</Typography>
-                    </Typography>
-                    <TextField
-                      fullWidth
-                      autoFocus
-                      required
-                      select
-                      // size="small"
-                      error={errorData.level !== undefined ? true : false}
-                      helperText={
-                        errorData.level !== undefined
-                          ? errorData.level[0]
-                          : null
-                      }
-                      id="level"
-                      // label="Department"
-                      margin="normal"
-                      name="level"
-                      value={data.level !== undefined ? data.level : ''}
-                      onChange={onChange}
-                    >
-                      <MenuItem value="1">Superadmin</MenuItem>
-                      <MenuItem value="2">Admin</MenuItem>
-                      <MenuItem value="3">Employee</MenuItem>
-                    </TextField>
-                    <Box
-                      sx={{
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'flex-end',
-                      }}
-                    >
-                      {data.level != null ? (
-                        <Button
-                          variant="contained"
-                          type="submit"
-                          sx={{
-                            fontFamily: 'Ubuntu',
-                            textTransform: 'capitalize',
-                            fontSize: 18,
-                            px: 5,
-                            mt: 3,
-                          }}
-                        >
-                          Submit
-                        </Button>
-                      ) : (
-                        <Button
-                          disabled
-                          variant="contained"
-                          // type="submit"
-                          sx={{
-                            fontFamily: 'Ubuntu',
-                            textTransform: 'capitalize',
-                            fontSize: 18,
-                            px: 5,
-                            mt: 3,
-                          }}
-                        >
-                          Submit
-                        </Button>
-                      )}
-                    </Box>
-                  </Box>
-                </>
-              )}
-
+                    Payment Method
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu', fontWeight: 'bold' }}>
+                    Bank Transfer (BCA)
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Paid Date
+                  </Typography>
+                  <Typography sx={{ fontFamily: 'Ubuntu' }}></Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Due Date
+                  </Typography>
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.ICON_COLOR }}
+                  >
+                    16/12/2021
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    mt: 2,
+                  }}
+                >
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.GRAY_COLOR }}
+                  >
+                    Status Payment
+                  </Typography>
+                  <Typography
+                    sx={{ fontFamily: 'Ubuntu', color: Color.ICON_COLOR }}
+                  >
+                    Unpaid
+                  </Typography>
+                </Box>
+              </Box>
+              {/* <Divider sx={{ mt: 4 }} /> */}
               <Grid
                 container
                 spacing={2}
-                mt={8}
+                mt={3}
                 // sx={{ bgcolor: Color.RED_COLOR }}
               >
                 <Grid
                   item
-                  xs={8}
-                  // sx={{
-                  //   display: 'flex',
-                  //   justifyContent: 'flex-end',
-                  // }}
+                  xs={10}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                  }}
                 >
                   <Button
                     // variant="contained"
@@ -1120,7 +1421,7 @@ function UpgradeForm(props) {
                       fontFamily: 'Ubuntu',
                       textTransform: 'capitalize',
                       fontSize: 18,
-                      color: Color.BLACK_COLOR,
+                      color: Color.GRAY_COLOR,
                     }}
                     onClick={() => setStep('2')}
                   >
@@ -1129,40 +1430,38 @@ function UpgradeForm(props) {
                 </Grid>
                 <Grid
                   item
-                  xs={4}
+                  xs={2}
                   sx={{ justifyContent: 'flex-end', display: 'flex' }}
                 >
-                  {step === 'done' ? (
-                    <NavLink
-                      to="/master-data/users"
-                      style={{ textDecoration: 'none' }}
-                    >
-                      <Button
-                        variant="contained"
-                        // type="submit"
-                        sx={{
-                          fontFamily: 'Ubuntu',
-                          textTransform: 'capitalize',
-                          fontSize: 18,
-                          px: 2,
-                        }}
-                      >
-                        Add Another Employee
-                      </Button>
-                    </NavLink>
-                  ) : (
+                  {data.payment != null ? (
                     <Button
+                      // disabled
                       variant="contained"
-                      disabled
-                      // type="submit"
+                      type="submit"
                       sx={{
                         fontFamily: 'Ubuntu',
                         textTransform: 'capitalize',
                         fontSize: 18,
-                        px: 2,
+                        px: 5,
                       }}
                     >
-                      Add Another Employee
+                      <i class="ri-shopping-cart-2-fill"></i>
+                      Order
+                    </Button>
+                  ) : (
+                    <Button
+                      disabled
+                      variant="contained"
+                      type="submit"
+                      sx={{
+                        fontFamily: 'Ubuntu',
+                        textTransform: 'capitalize',
+                        fontSize: 18,
+                        px: 5,
+                      }}
+                    >
+                      <i class="ri-shopping-cart-2-fill"></i>
+                      Order
                     </Button>
                   )}
                 </Grid>
